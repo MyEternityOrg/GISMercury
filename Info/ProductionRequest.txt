@@ -1,0 +1,455 @@
+
+Prefixes:
+     xsd: http://www.w3.org/2001/XMLSchema
+     ns0: http://api.vetrf.ru/schema/cdm/application/ws-definitions
+     ns1: http://api.vetrf.ru/schema/cdm/base
+     ns2: http://api.vetrf.ru/schema/cdm/application
+     ns3: http://api.vetrf.ru/schema/cdm/base/ws-definitions
+     ns4: http://api.vetrf.ru/schema/cdm/mercury/g2b/applications/v2
+     ns5: http://api.vetrf.ru/schema/cdm/dictionary/v2
+     ns6: http://api.vetrf.ru/schema/cdm/mercury/vet-document/v2
+
+Global elements:
+     ns0:receiveApplicationResultRequest(apiKey: ns2:APIKey, issuerId: ns1:UUID, applicationId: ns1:UUID)
+     ns0:receiveApplicationResultResponse(application: ns2:Application)
+     ns0:submitApplicationRequest(apiKey: ns2:APIKey, application: ns2:Application)
+     ns0:submitApplicationResponse(application: ns2:Application)
+     ns0:unknownServiceIdFault(ns1:FaultInfo)
+     ns0:unsupportedApplicationDataTypeFault(ns1:FaultInfo)
+     ns2:application(ns2:Application)
+     ns2:applicationData(ns2:ApplicationData)
+     ns2:applicationResultData(ns2:ApplicationResultData)
+     ns2:binary(ns2:BinaryContent)
+     ns2:businessError(ns2:BusinessError)
+     ns2:errorList(ns2:BusinessErrorList)
+     ns3:accessDeniedFault(ns1:FaultInfo)
+     ns3:entityNotFoundFault(ns1:FaultInfo)
+     ns3:incorrectRequestFault(ns1:FaultInfo)
+     ns3:internalServiceFault(ns1:FaultInfo)
+     ns3:offsetOutOfRangeFault(ns1:FaultInfo)
+     ns3:requestRejectedFault(ns1:FaultInfo)
+     ns1:guid(ns1:UUID)
+     ns1:listOptions(ns1:ListOptions)
+     ns1:updateDateInterval(ns1:DateInterval)
+     ns1:uuid(ns1:UUID)
+     ns5:activityLocationList(ns5:ActivityLocationList)
+     ns5:businessEntity(ns5:BusinessEntity)
+     ns5:businessEntityList(ns5:BusinessEntityList)
+     ns5:businessMember(ns5:BusinessMember)
+     ns5:cargoType(ns5:SubProduct)
+     ns5:country(ns5:Country)
+     ns5:countryGuid(ns1:UUID)
+     ns5:countryList(ns5:CountryList)
+     ns5:disease(ns5:AnimalDisease)
+     ns5:diseaseList(ns5:AnimalDiseaseList)
+     ns5:district(ns5:District)
+     ns5:districtGuid(ns1:UUID)
+     ns5:districtList(ns5:DistrictList)
+     ns5:enterprise(ns5:Enterprise)
+     ns5:enterpriseGroup(ns5:EnterpriseGroup)
+     ns5:enterpriseGuid(ns1:UUID)
+     ns5:enterpriseList(ns5:EnterpriseList)
+     ns5:globalID(ns5:GLNType)
+     ns5:localityGuid(ns1:UUID)
+     ns5:localityList(ns5:LocalityList)
+     ns5:producer(ns5:BusinessMember)
+     ns5:product(ns5:Product)
+     ns5:productGuid(ns1:UUID)
+     ns5:productItem(ns5:ProductItem)
+     ns5:productItemList(ns5:ProductItemList)
+     ns5:productList(ns5:ProductList)
+     ns5:productType(ns5:ProductType)
+     ns5:purpose(ns5:Purpose)
+     ns5:purposeList(ns5:PurposeList)
+     ns5:r13nConditionList(ns5:RegionalizationConditionList)
+     ns5:r13nRegionStatusList(ns5:RegionalizationRegionStatusList)
+     ns5:r13nShippingRuleList(ns5:RegionalizationShippingRuleList)
+     ns5:r13nZone(ns5:Area)
+     ns5:region(ns5:Region)
+     ns5:regionGuid(ns1:UUID)
+     ns5:regionList(ns5:RegionList)
+     ns5:researchMethod(ns5:ResearchMethod)
+     ns5:researchMethodList(ns5:ResearchMethodList)
+     ns5:streetList(ns5:StreetList)
+     ns5:subProduct(ns5:SubProduct)
+     ns5:subProductGuid(ns1:UUID)
+     ns5:subProductList(ns5:SubProductList)
+     ns5:unit(ns5:Unit)
+     ns5:unitList(ns5:UnitList)
+     ns4:addBusinessEntityUserRequest(ns4:AddBusinessEntityUserRequest)
+     ns4:addBusinessEntityUserResponse(ns4:AddBusinessEntityUserResponse)
+     ns4:checkShipmentRegionalizationRequest(ns4:CheckShipmentRegionalizationRequest)
+     ns4:checkShipmentRegionalizationResponse(ns4:CheckShipmentRegionalizationResponse)
+     ns4:getApplicableUserAuthorityListRequest(ns4:GetApplicableUserAuthorityListRequest)
+     ns4:getApplicableUserAuthorityListResponse(ns4:GetApplicableUserAuthorityListResponse)
+     ns4:getBusinessEntityUserListRequest(ns4:GetBusinessEntityUserListRequest)
+     ns4:getBusinessEntityUserListResponse(ns4:GetBusinessEntityUserListResponse)
+     ns4:getBusinessEntityUserRequest(ns4:GetBusinessEntityUserRequest)
+     ns4:getBusinessEntityUserResponse(ns4:GetBusinessEntityUserResponse)
+     ns4:getStockEntryByGuidRequest(ns4:GetStockEntryByGuidRequest)
+     ns4:getStockEntryByGuidResponse(ns4:GetStockEntryByGuidResponse)
+     ns4:getStockEntryByUuidRequest(ns4:GetStockEntryByUuidRequest)
+     ns4:getStockEntryByUuidResponse(ns4:GetStockEntryByUuidResponse)
+     ns4:getStockEntryChangesListRequest(ns4:GetStockEntryChangesListRequest)
+     ns4:getStockEntryChangesListResponse(ns4:GetStockEntryChangesListResponse)
+     ns4:getStockEntryListRequest(ns4:GetStockEntryListRequest)
+     ns4:getStockEntryListResponse(ns4:GetStockEntryListResponse)
+     ns4:getStockEntryVersionListRequest(ns4:GetStockEntryVersionListRequest)
+     ns4:getStockEntryVersionListResponse(ns4:GetStockEntryVersionListResponse)
+     ns4:getVetDocumentByUuidRequest(ns4:GetVetDocumentByUuidRequest)
+     ns4:getVetDocumentByUuidResponse(ns4:GetVetDocumentByUuidResponse)
+     ns4:getVetDocumentChangesListRequest(ns4:GetVetDocumentChangesListRequest)
+     ns4:getVetDocumentChangesListResponse(ns4:GetVetDocumentChangesListResponse)
+     ns4:getVetDocumentListRequest(ns4:GetVetDocumentListRequest)
+     ns4:getVetDocumentListResponse(ns4:GetVetDocumentListResponse)
+     ns4:mergeStockEntriesRequest(ns4:MergeStockEntriesRequest)
+     ns4:mergeStockEntriesResponse(ns4:MergeStockEntriesResponse)
+     ns4:modifyActivityLocationsRequest(ns4:ModifyActivityLocationsRequest)
+     ns4:modifyActivityLocationsResponse(ns4:ModifyActivityLocationsResponse)
+     ns4:modifyBusinessEntityRequest(ns4:ModifyBusinessEntityRequest)
+     ns4:modifyBusinessEntityResponse(ns4:ModifyBusinessEntityResponse)
+     ns4:modifyEnterpriseRequest(ns4:ModifyEnterpriseRequest)
+     ns4:modifyEnterpriseResponse(ns4:ModifyEnterpriseResponse)
+     ns4:modifyProducerStockListRequest(ns4:ModifyProducerStockListRequest)
+     ns4:modifyProducerStockListResponse(ns4:ModifyProducerStockListResponse)
+     ns4:prepareOutgoingConsignmentRequest(ns4:PrepareOutgoingConsignmentRequest)
+     ns4:prepareOutgoingConsignmentResponse(ns4:PrepareOutgoingConsignmentResponse)
+     ns4:processIncomingConsignmentRequest(ns4:ProcessIncomingConsignmentRequest)
+     ns4:processIncomingConsignmentResponse(ns4:ProcessIncomingConsignmentResponse)
+     ns4:processIncomingDeliveryRequest(ns4:ProcessIncomingDeliveryRequest)
+     ns4:processIncomingDeliveryResponse(ns4:ProcessIncomingDeliveryResponse)
+     ns4:registerProductionOperationRequest(ns4:RegisterProductionOperationRequest)
+     ns4:registerProductionOperationResponse(ns4:RegisterProductionOperationResponse)
+     ns4:resolveDiscrepancyRequest(ns4:ResolveDiscrepancyRequest)
+     ns4:resolveDiscrepancyResponse(ns4:ResolveDiscrepancyResponse)
+     ns4:unbindBusinessEntityUserRequest(ns4:UnbindBusinessEntityUserRequest)
+     ns4:unbindBusinessEntityUserResponse(ns4:UnbindBusinessEntityUserResponse)
+     ns4:updateTransportMovementDetailsRequest(ns4:UpdateTransportMovementDetailsRequest)
+     ns4:updateTransportMovementDetailsResponse(ns4:UpdateTransportMovementDetailsResponse)
+     ns4:updateUserAuthoritiesRequest(ns4:UpdateUserAuthoritiesRequest)
+     ns4:updateUserAuthoritiesResponse(ns4:UpdateUserAuthoritiesResponse)
+     ns4:updateUserWorkingAreasRequest(ns4:UpdateUserWorkingAreasRequest)
+     ns4:updateUserWorkingAreasResponse(ns4:UpdateUserWorkingAreasResponse)
+     ns4:updateVeterinaryEventsRequest(ns4:UpdateVeterinaryEventsRequest)
+     ns4:updateVeterinaryEventsResponse(ns4:UpdateVeterinaryEventsResponse)
+     ns4:withdrawVetDocumentRequest(ns4:WithdrawVetDocumentRequest)
+     ns4:withdrawVetDocumentResponse(ns4:WithdrawVetDocumentResponse)
+     ns6:authorityList(ns6:AuthorityList)
+     ns6:consignor(ns5:BusinessMember)
+     ns6:deliveryParticipant(ns5:BusinessMember)
+     ns6:issueDateInterval(ns1:DateInterval)
+     ns6:r13nRouteSection(ns6:RouteSectionR13nRules)
+     ns6:referencedDocument(ns6:ReferencedDocument)
+     ns6:shipmentRoute(ns6:ShipmentRoute)
+     ns6:stockEntry(ns6:StockEntry)
+     ns6:stockEntryEventList(ns6:StockEntryEventList)
+     ns6:stockEntryList(ns6:StockEntryList)
+     ns6:stockEntryUuid(ns1:UUID)
+     ns6:user(ns6:User)
+     ns6:userList(ns6:UserList)
+     ns6:vetDocument(ns6:VetDocument)
+     ns6:vetDocumentList(ns6:VetDocumentList)
+     ns6:vetDocumentStatus(ns6:VetDocumentStatus)
+     ns6:vetDocumentType(ns6:VetDocumentType)
+     ns6:vetDocumentUuid(ns1:UUID)
+     
+
+Global types:
+     xsd:anyType
+     ns2:APIKey
+     ns2:Application(applicationId: ns1:UUID, status: ns2:ApplicationStatus, serviceId: xsd:Name, issuerId: ns1:UUID, issueDate: xsd:dateTime, rcvDate: xsd:dateTime, prdcRsltDate: xsd:dateTime, data: ns2:ApplicationDataWrapper, result: ns2:ApplicationResultWrapper, errors: ns2:BusinessErrorList)
+     ns2:ApplicationData()
+     ns2:ApplicationDataWrapper(_value_1: ANY, encoding: ns2:ContentEncoding)
+     ns2:ApplicationResultData()
+     ns2:ApplicationResultWrapper(_value_1: ANY, encoding: ns2:ContentEncoding)
+     ns2:ApplicationStatus
+     ns2:BinaryContent
+     ns2:BusinessError(xsd:string, code: xsd:NCName, qualifier: ns1:Identifier)
+     ns2:BusinessErrorList(error: ns2:BusinessError[])
+     ns2:ContentEncoding
+     ns1:DateInterval(beginDate: xsd:dateTime, endDate: xsd:dateTime)
+     ns1:Decimal
+     ns1:EntityList(count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns1:Error(xsd:string, code: xsd:NCName, qualifier: ns1:Identifier)
+     ns1:FaultInfo(message: xsd:string, error: ns1:Error[])
+     ns1:GenericEntity(uuid: ns1:UUID)
+     ns1:GenericVersioningEntity(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID)
+     ns1:Identifier
+     ns1:ListOptions(count: xsd:nonNegativeInteger, offset: xsd:nonNegativeInteger)
+     ns1:NText
+     ns1:RegisterModificationType
+     ns1:SequenceNumber
+     ns1:String255
+     ns1:String32
+     ns1:Text
+     ns1:UUID
+     ns1:VersionStatus
+     ns5:ActivityLocationList(location: ns5:BusinessMember[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns5:Address(country: ns5:Country, federalDistrict: ns5:FederalDistrict, region: ns5:Region, district: ns5:District, locality: ns5:Locality, subLocality: ns5:Locality, street: ns5:Street, house: ns1:String255, building: ns1:String255, room: ns1:String255, postIndex: ns1:String255, postBox: ns1:String255, additionalInfo: ns1:NText, addressView: ns1:NText, enAddressView: ns1:NText)
+     ns5:AddressObjectView(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, name: ns1:String255, englishName: ns1:String255, view: ns1:String255, regionCode: xsd:string, type: ns1:String255, countryGuid: ns1:UUID, hasStreets: xsd:boolean)
+     ns5:AnimalDisease(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, name: ns1:String255)
+     ns5:AnimalDiseaseList(disease: ns5:AnimalDisease[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns5:Area(country: ns5:Country, federalDistrict: ns5:FederalDistrict, region: ns5:Region, district: ns5:District, locality: ns5:Locality, subLocality: ns5:Locality, street: ns5:Street, house: ns1:String255, building: ns1:String255, room: ns1:String255, postIndex: ns1:String255, postBox: ns1:String255, additionalInfo: ns1:NText, addressView: ns1:NText, enAddressView: ns1:NText)
+     ns5:BEModificationReason
+     ns5:BusinessEntity(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, type: ns5:BusinessEntityType, name: ns1:String255, incorporationForm: ns5:IncorporationForm, fullName: ns1:String255, fio: ns1:String255, passport: ns1:String255, inn: ns1:String255, kpp: ns1:String255, ogrn: ns1:String255, juridicalAddress: ns5:Address, activityLocation: {globalID: ns5:GLNType[], enterprise: ns5:Enterprise}[])
+     ns5:BusinessEntityList(businessEntity: ns5:BusinessEntity[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns5:BusinessEntityType
+     ns5:BusinessMember(businessEntity: ns5:BusinessEntity, enterprise: ns5:Enterprise, globalID: ns5:GLNType[])
+     ns5:Code
+     ns5:Code3
+     ns5:ComplexDate(year: ns5:Year, month: ns5:Month, day: ns5:Day, hour: ns5:Hour, minute: ns5:Minute)
+     ns5:Country(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, name: ns1:String255, fullName: ns1:String255, englishName: ns1:String255, code: ns5:Code, code3: ns5:Code3)
+     ns5:CountryList(country: ns5:Country[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns5:Day
+     ns5:District(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, name: ns1:String255, englishName: ns1:String255, view: ns1:String255, regionCode: xsd:string, type: ns1:String255, countryGuid: ns1:UUID, hasStreets: xsd:boolean, regionGuid: ns1:UUID)
+     ns5:DistrictList(district: ns5:District[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns5:DocumentNature
+     ns5:DocumentType
+     ns5:ENTModificationReason
+     ns5:Enterprise(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, name: ns1:String255, englishName: ns1:String255, type: ns5:EnterpriseType, numberList: ns5:EnterpriseNumberList, address: ns5:Address, activityList: ns5:EnterpriseActivityList, owner: ns5:BusinessEntity, officialRegistration: ns5:EnterpriseOfficialRegistration[], registryStatus: ns5:EnterpriseStatus)
+     ns5:EnterpriseActivity(uuid: ns1:UUID, name: ns1:NText)
+     ns5:EnterpriseActivityList(activity: ns5:EnterpriseActivity[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns5:EnterpriseGroup
+     ns5:EnterpriseList(enterprise: ns5:Enterprise[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns5:EnterpriseNumberList(enterpriseNumber: ns1:String255[])
+     ns5:EnterpriseOfficialRegistration(ID: ns5:GRNType, businessEntity: ns5:BusinessEntity, kpp: ns1:String255)
+     ns5:EnterpriseRole
+     ns5:EnterpriseStatus
+     ns5:EnterpriseType
+     ns5:FederalDistrict(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, fullName: ns1:String255, shortName: ns1:String255, abbreviation: ns1:String255)
+     ns5:GLNType
+     ns5:GRNType
+     ns5:GTINType
+     ns5:Hour
+     ns5:IncorporationForm(uuid: ns1:UUID, name: ns1:String255, code: ns1:String255, shortName: ns1:String255)
+     ns5:Indicator(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, name: ns1:String255)
+     ns5:Locality(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, name: ns1:String255, englishName: ns1:String255, view: ns1:String255, regionCode: xsd:string, type: ns1:String255, countryGuid: ns1:UUID, hasStreets: xsd:boolean, regionGuid: ns1:UUID, districtGuid: ns1:UUID, cityGuid: ns1:UUID)
+     ns5:LocalityList(locality: ns5:Locality[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns5:Location(name: ns1:String255, address: ns5:Address)
+     ns5:MedicinalDrug(ID: ns1:Identifier, name: ns1:String255, series: ns1:String255, producer: ns5:BusinessMember)
+     ns5:Minute
+     ns5:Month
+     ns5:OTPToken
+     ns5:Organization(ID: ns1:Identifier, name: ns1:String255, address: ns5:Address)
+     ns5:Package(level: ns5:PackageLevelType, packingType: ns5:PackingType, quantity: xsd:integer, productMarks: ns5:ProductMarks[])
+     ns5:PackageLevelType
+     ns5:PackageList(package: ns5:Package[])
+     ns5:Packaging(packagingType: ns5:PackingType, quantity: xsd:integer, volume: ns1:Decimal, unit: ns5:Unit)
+     ns5:PackingCodeType
+     ns5:PackingType(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, globalID: ns5:PackingCodeType, name: ns1:String255)
+     ns5:Producer(enterprise: ns5:Enterprise, role: ns5:EnterpriseRole)
+     ns5:ProducerList(producer: ns5:Producer[])
+     ns5:Product(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, name: ns1:String255, code: ns1:String255, englishName: ns1:String255, productType: ns5:ProductType)
+     ns5:ProductItem(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, globalID: ns5:GTINType, name: ns1:String255, code: ns1:String255, productType: ns5:ProductType, product: ns5:Product, subProduct: ns5:SubProduct, correspondsToGost: xsd:boolean, gost: ns1:String255, producer: ns5:BusinessEntity, tmOwner: ns5:BusinessEntity, producing: ns5:ProductItemProducing[], packaging: ns5:Packaging, isPublic: xsd:boolean)
+     ns5:ProductItemList(productItem: ns5:ProductItem[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns5:ProductItemProducing(location: ns5:Enterprise)
+     ns5:ProductList(product: ns5:Product[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns5:ProductMarkingClass
+     ns5:ProductMarks(ns1:String255, class: ns5:ProductMarkingClass)
+     ns5:ProductType
+     ns5:ProsperityType
+     ns5:Purpose(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, name: ns1:String255, forSubstandard: xsd:boolean)
+     ns5:PurposeList(purpose: ns5:Purpose[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns5:ReferenceType
+     ns5:Region(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, name: ns1:String255, englishName: ns1:String255, view: ns1:String255, regionCode: xsd:string, type: ns1:String255, countryGuid: ns1:UUID, hasStreets: xsd:boolean)
+     ns5:RegionList(region: ns5:Region[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns5:RegionalizationCondition(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, referenceNumber: ns1:Identifier, text: ns1:Text, strict: xsd:boolean, relatedDisease: ns5:AnimalDisease[])
+     ns5:RegionalizationConditionGroup(condition: ns5:RegionalizationCondition[])
+     ns5:RegionalizationConditionList(condition: ns5:RegionalizationCondition[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns5:RegionalizationDecision
+     ns5:RegionalizationRegionStatus(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, referenceNumber: ns1:Identifier, r13nZone: ns5:Area, excludedR13nZone: ns5:Area[], r13nStatus: ns5:RegionalizationStatus[])
+     ns5:RegionalizationRegionStatusList(status: ns5:RegionalizationRegionStatus[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns5:RegionalizationRequirement(relatedDisease: ns5:AnimalDisease, type: ns5:RegionalizationDecision, conditionGroup: ns5:RegionalizationConditionGroup[])
+     ns5:RegionalizationShippingRule(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, referenceNumber: ns1:Identifier, fromR13nStatus: ns5:RegionalizationStatus, toR13nStatus: ns5:RegionalizationStatus, cargoType: ns5:SubProduct[], decision: ns5:RegionalizationDecision, requirement: ns5:RegionalizationRequirement[])
+     ns5:RegionalizationShippingRuleList(rule: ns5:RegionalizationShippingRule[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns5:RegionalizationStatus(relatedDisease: ns5:AnimalDisease, prosperity: ns5:ProsperityType, vaccination: ns5:VaccinationType)
+     ns5:ResearchMethod(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, name: ns1:String255)
+     ns5:ResearchMethodList(method: ns5:ResearchMethod[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns5:ResearchResult
+     ns5:Street(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, name: ns1:String255, englishName: ns1:String255, view: ns1:String255, regionCode: xsd:string, type: ns1:String255, countryGuid: ns1:UUID, hasStreets: xsd:boolean, localityGuid: ns1:UUID)
+     ns5:StreetList(street: ns5:Street[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns5:SubProduct(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, name: ns1:String255, code: ns1:String255, englishName: ns1:String255, productGuid: ns1:UUID)
+     ns5:SubProductList(subProduct: ns5:SubProduct[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns5:TransportType
+     ns5:TransportationStorageType
+     ns5:Unit(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, name: ns1:String255, fullName: ns1:String255, commonUnitGuid: ns1:UUID, factor: xsd:integer)
+     ns5:UnitList(unit: ns5:Unit[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns5:VaccinationType
+     ns5:Year
+     ns4:AddBusinessEntityUserRequest(localTransactionId: ns1:Identifier, initiator: ns6:User, sessionToken: ns5:OTPToken, user: ns6:User[])
+     ns4:AddBusinessEntityUserResponse(user: ns6:User[])
+     ns4:CheckShipmentRegionalizationRequest(localTransactionId: ns1:Identifier, initiator: ns6:User, sessionToken: ns5:OTPToken, cargoType: ns5:SubProduct[], shipmentRoute: ns6:ShipmentRoute)
+     ns4:CheckShipmentRegionalizationResponse(r13nRouteSection: ns6:RouteSectionR13nRules[])
+     ns4:GetApplicableUserAuthorityListRequest(localTransactionId: ns1:Identifier, initiator: ns6:User, sessionToken: ns5:OTPToken, listOptions: ns1:ListOptions)
+     ns4:GetApplicableUserAuthorityListResponse(authorityList: ns6:AuthorityList)
+     ns4:GetBusinessEntityUserListRequest(localTransactionId: ns1:Identifier, initiator: ns6:User, sessionToken: ns5:OTPToken, listOptions: ns1:ListOptions)
+     ns4:GetBusinessEntityUserListResponse(userList: ns6:UserList)
+     ns4:GetBusinessEntityUserRequest(localTransactionId: ns1:Identifier, initiator: ns6:User, sessionToken: ns5:OTPToken, user: ns6:User)
+     ns4:GetBusinessEntityUserResponse(user: ns6:User)
+     ns4:GetStockEntryByGuidRequest(localTransactionId: ns1:Identifier, initiator: ns6:User, sessionToken: ns5:OTPToken, guid: ns1:UUID, enterpriseGuid: ns1:UUID)
+     ns4:GetStockEntryByGuidResponse(stockEntry: ns6:StockEntry)
+     ns4:GetStockEntryByUuidRequest(localTransactionId: ns1:Identifier, initiator: ns6:User, sessionToken: ns5:OTPToken, uuid: ns1:UUID, enterpriseGuid: ns1:UUID)
+     ns4:GetStockEntryByUuidResponse(stockEntry: ns6:StockEntry)
+     ns4:GetStockEntryChangesListRequest(localTransactionId: ns1:Identifier, initiator: ns6:User, sessionToken: ns5:OTPToken, listOptions: ns1:ListOptions, updateDateInterval: ns1:DateInterval, enterpriseGuid: ns1:UUID)
+     ns4:GetStockEntryChangesListResponse(stockEntryList: ns6:StockEntryList)
+     ns4:GetStockEntryListRequest(localTransactionId: ns1:Identifier, initiator: ns6:User, sessionToken: ns5:OTPToken, listOptions: ns1:ListOptions, enterpriseGuid: ns1:UUID, searchPattern: ns6:StockEntrySearchPattern)
+     ns4:GetStockEntryListResponse(stockEntryList: ns6:StockEntryList)
+     ns4:GetStockEntryVersionListRequest(localTransactionId: ns1:Identifier, initiator: ns6:User, sessionToken: ns5:OTPToken, listOptions: ns1:ListOptions, guid: ns1:UUID, enterpriseGuid: ns1:UUID)
+     ns4:GetStockEntryVersionListResponse(stockEntryList: ns6:StockEntryList)
+     ns4:GetVetDocumentByUuidRequest(localTransactionId: ns1:Identifier, initiator: ns6:User, sessionToken: ns5:OTPToken, uuid: ns1:UUID, enterpriseGuid: ns1:UUID)
+     ns4:GetVetDocumentByUuidResponse(vetDocument: ns6:VetDocument)
+     ns4:GetVetDocumentChangesListRequest(localTransactionId: ns1:Identifier, initiator: ns6:User, sessionToken: ns5:OTPToken, listOptions: ns1:ListOptions, updateDateInterval: ns1:DateInterval, enterpriseGuid: ns1:UUID, vetDocumentType: ns6:VetDocumentType, vetDocumentStatus: ns6:VetDocumentStatus)
+     ns4:GetVetDocumentChangesListResponse(vetDocumentList: ns6:VetDocumentList)
+     ns4:GetVetDocumentListRequest(localTransactionId: ns1:Identifier, initiator: ns6:User, sessionToken: ns5:OTPToken, listOptions: ns1:ListOptions, vetDocumentType: ns6:VetDocumentType, vetDocumentStatus: ns6:VetDocumentStatus, issueDateInterval: ns1:DateInterval, consignor: ns5:BusinessMember, referencedDocument: ns6:ReferencedDocument, enterpriseGuid: ns1:UUID)
+     ns4:GetVetDocumentListResponse(vetDocumentList: ns6:VetDocumentList)
+     ns4:MercuryApplicationRequest(localTransactionId: ns1:Identifier, initiator: ns6:User, sessionToken: ns5:OTPToken)
+     ns4:MergeStockEntriesRequest(localTransactionId: ns1:Identifier, initiator: ns6:User, sessionToken: ns5:OTPToken, enterprise: ns5:Enterprise, mergeOperation: ns6:MergeStockEntriesOperation)
+     ns4:MergeStockEntriesResponse(stockEntryList: ns6:StockEntryList)
+     ns4:ModifyActivityLocationsRequest(localTransactionId: ns1:Identifier, initiator: ns6:User, sessionToken: ns5:OTPToken, modificationOperation: ns6:BEActivityLocationsModificationOperation)
+     ns4:ModifyActivityLocationsResponse(businessEntity: ns5:BusinessEntity)
+     ns4:ModifyBusinessEntityRequest(localTransactionId: ns1:Identifier, initiator: ns6:User, sessionToken: ns5:OTPToken, modificationOperation: ns6:BEModificationOperation)
+     ns4:ModifyBusinessEntityResponse(businessEntity: ns5:BusinessEntity[])
+     ns4:ModifyEnterpriseRequest(localTransactionId: ns1:Identifier, initiator: ns6:User, sessionToken: ns5:OTPToken, modificationOperation: ns6:ENTModificationOperation)
+     ns4:ModifyEnterpriseResponse(enterprise: ns5:Enterprise[])
+     ns4:ModifyProducerStockListRequest(localTransactionId: ns1:Identifier, initiator: ns6:User, sessionToken: ns5:OTPToken, modificationOperation: ns6:PSLModificationOperation)
+     ns4:ModifyProducerStockListResponse(productItemList: ns5:ProductItemList)
+     ns4:PrepareOutgoingConsignmentRequest(localTransactionId: ns1:Identifier, initiator: ns6:User, sessionToken: ns5:OTPToken, delivery: ns6:Delivery[])
+     ns4:PrepareOutgoingConsignmentResponse(stockEntry: ns6:StockEntry[], vetDocument: ns6:VetDocument[])
+     ns4:ProcessIncomingConsignmentRequest(localTransactionId: ns1:Identifier, initiator: ns6:User, sessionToken: ns5:OTPToken, delivery: ns6:Delivery, deliveryFacts: ns6:DeliveryFactList, discrepancyReport: ns6:DiscrepancyReport[], returnedDelivery: ns6:Delivery)
+     ns4:ProcessIncomingConsignmentResponse(stockEntry: ns6:StockEntry[], vetDocument: ns6:VetDocument[])
+     ns4:ProcessIncomingDeliveryRequest(localTransactionId: ns1:Identifier, initiator: ns6:User, sessionToken: ns5:OTPToken, delivery: ns6:Delivery, deliveryFacts: ns6:DeliveryFactList, returnedDelivery: ns6:Delivery)
+     ns4:ProcessIncomingDeliveryResponse(stockEntry: ns6:StockEntry[], vetDocument: ns6:VetDocument[])
+     ns4:RegisterProductionOperationRequest(localTransactionId: ns1:Identifier, initiator: ns6:User, sessionToken: ns5:OTPToken, enterprise: ns5:Enterprise, productionOperation: ns6:ProductionOperation, vetDocument: ns6:VetDocument[])
+     ns4:RegisterProductionOperationResponse(stockEntryList: ns6:StockEntryList, vetDocument: ns6:VetDocument[])
+     ns4:ResolveDiscrepancyRequest(localTransactionId: ns1:Identifier, initiator: ns6:User, sessionToken: ns5:OTPToken, enterprise: ns5:Enterprise, inventoryDate: xsd:dateTime, responsible: ns6:User, stockDiscrepancy: ns6:StockDiscrepancy[], discrepancyReport: ns6:DiscrepancyReport[])
+     ns4:ResolveDiscrepancyResponse(stockEntryList: ns6:StockEntryList)
+     ns4:UnbindBusinessEntityUserRequest(localTransactionId: ns1:Identifier, initiator: ns6:User, sessionToken: ns5:OTPToken, user: ns6:User[])
+     ns4:UnbindBusinessEntityUserResponse(user: ns6:User[])
+     ns4:UpdateTransportMovementDetailsRequest(localTransactionId: ns1:Identifier, initiator: ns6:User, sessionToken: ns5:OTPToken, deliveryParticipant: ns5:BusinessMember, vetDocumentUuid: ns1:UUID[], shipmentRoute: ns6:ShipmentRoute)
+     ns4:UpdateTransportMovementDetailsResponse(vetDocument: ns6:VetDocument[])
+     ns4:UpdateUserAuthoritiesRequest(localTransactionId: ns1:Identifier, initiator: ns6:User, sessionToken: ns5:OTPToken, user: ns6:User[])
+     ns4:UpdateUserAuthoritiesResponse(user: ns6:User[])
+     ns4:UpdateUserWorkingAreasRequest(localTransactionId: ns1:Identifier, initiator: ns6:User, sessionToken: ns5:OTPToken, user: ns6:User[])
+     ns4:UpdateUserWorkingAreasResponse(user: ns6:User[])
+     ns4:UpdateVeterinaryEventsRequest(localTransactionId: ns1:Identifier, initiator: ns6:User, sessionToken: ns5:OTPToken, enterprise: ns5:Enterprise, stockEntry: ns6:StockEntry[])
+     ns4:UpdateVeterinaryEventsResponse(stockEntry: ns6:StockEntry[])
+     ns4:WithdrawVetDocumentRequest(localTransactionId: ns1:Identifier, initiator: ns6:User, sessionToken: ns5:OTPToken, vetDocumentId: ns1:UUID, withdrawReason: ns6:VetDocumentStatusChangeReason, withdrawDate: xsd:dateTime, specifiedPerson: ns6:User)
+     ns4:WithdrawVetDocumentResponse(vetDocument: ns6:VetDocument, stockEntry: ns6:StockEntry[])
+     ns6:AnimalMedicationEvent(ID: ns1:Identifier, name: ns1:String255, type: ns6:VeterinaryEventType, actualDateTime: xsd:dateTime, ({location: ns5:Location} | {enterprise: ns5:Enterprise}), operator: ns5:Organization, referencedDocument: ns6:Document[], notes: ns1:Text, disease: ns5:AnimalDisease, medicinalDrug: ns5:MedicinalDrug, effectiveBeforeDate: xsd:dateTime)
+     ns6:AnimalSpentPeriod
+     ns6:AuthorityList(authority: ns6:UserAuthority[])
+     ns6:BEActivityLocationsModificationOperation(type: ns1:RegisterModificationType, businessEntity: ns5:BusinessEntity, activityLocation: {globalID: ns5:GLNType[], enterprise: ns5:Enterprise}[])
+     ns6:BEModificationOperation(type: ns1:RegisterModificationType, affectedList: ns5:BusinessEntityList, resultingList: ns5:BusinessEntityList, reason: ns5:BEModificationReason)
+     ns6:Batch(productType: ns5:ProductType, product: ns5:Product, subProduct: ns5:SubProduct, productItem: ns5:ProductItem, volume: ns1:Decimal, unit: ns5:Unit, dateOfProduction: ns6:GoodsDate, expiryDate: ns6:GoodsDate, batchID: ns1:Identifier[], perishable: xsd:boolean, origin: ns6:BatchOrigin, lowGradeCargo: xsd:boolean, packageList: ns5:PackageList, owner: ns5:BusinessEntity, applicableClassifications: ns6:BatchExtraInfo)
+     ns6:BatchExtraInfo(nonFoodSource: ns6:NonFoodProductSourceType)
+     ns6:BatchOrigin(productItem: ns5:ProductItem, country: ns5:Country, producer: ns5:Producer[])
+     ns6:CertifiedBatch(producer: ns5:BusinessMember, batch: ns6:Batch)
+     ns6:CertifiedConsignment(consignor: ns5:BusinessMember, consignee: ns5:BusinessMember, broker: ns5:BusinessEntity, transportInfo: ns6:TransportInfo, transportStorageType: ns5:TransportationStorageType, shipmentRoute: ns6:ShipmentRoute, batch: ns6:Batch)
+     ns6:Citizenship(country: ns5:Country)
+     ns6:Consignment(productType: ns5:ProductType, product: ns5:Product, subProduct: ns5:SubProduct, productItem: ns5:ProductItem, volume: ns1:Decimal, unit: ns5:Unit, dateOfProduction: ns6:GoodsDate, expiryDate: ns6:GoodsDate, batchID: ns1:Identifier[], perishable: xsd:boolean, origin: ns6:BatchOrigin, lowGradeCargo: xsd:boolean, packageList: ns5:PackageList, owner: ns5:BusinessEntity, applicableClassifications: ns6:BatchExtraInfo, sourceStockEntry: ns6:StockEntry, id: xsd:ID, partOf: xsd:IDREF)
+     ns6:ConsignmentDocumentList(waybill: ns6:Waybill, vetCertificate: ns6:VetDocument[], relatedDocument: ns6:ReferencedDocument[])
+     ns6:Delivery(uuid: ns1:UUID, deliveryDate: xsd:dateTime, consignor: ns5:BusinessMember, consignee: ns5:BusinessMember, consignment: ns6:Consignment[], broker: ns5:BusinessEntity, transportInfo: ns6:TransportInfo, transportStorageType: ns5:TransportationStorageType, shipmentRoute: ns6:ShipmentRoute, accompanyingForms: ns6:ConsignmentDocumentList)
+     ns6:DeliveryDecision
+     ns6:DeliveryFactList(vetCertificatePresence: ns5:DocumentNature, docInspection: ns6:DeliveryInspection, vetInspection: ns6:DeliveryInspection, decision: ns6:DeliveryDecision)
+     ns6:DeliveryInspection(responsible: ns6:User, result: ns6:DeliveryInspectionResult, info: ns1:Text)
+     ns6:DeliveryInspectionResult
+     ns6:DiscrepancyReason(uuid: ns1:UUID, name: ns1:String255)
+     ns6:DiscrepancyReport(uuid: ns1:UUID, name: ns1:String255, form: ns1:String255, issueSeries: ns1:String255, issueNumber: ns1:String255, issueDate: xsd:date, type: ns5:DocumentType, issuer: ns5:Organization, reason: ns6:DiscrepancyReason, description: xsd:string, for: xsd:IDREF, qualifier: ns1:Identifier)
+     ns6:Document(uuid: ns1:UUID, name: ns1:String255, form: ns1:String255, issueSeries: ns1:String255, issueNumber: ns1:String255, issueDate: xsd:date, type: ns5:DocumentType, issuer: ns5:Organization, for: xsd:IDREF, qualifier: ns1:Identifier)
+     ns6:ENTModificationOperation(type: ns1:RegisterModificationType, affectedList: ns5:EnterpriseList, resultingList: ns5:EnterpriseList, reason: ns5:ENTModificationReason)
+     ns6:GoodsDate(firstDate: ns5:ComplexDate, secondDate: ns5:ComplexDate, informalDate: ns1:String255)
+     ns6:LaboratoryResearchEvent(ID: ns1:Identifier, name: ns1:String255, type: ns6:VeterinaryEventType, actualDateTime: xsd:dateTime, ({location: ns5:Location} | {enterprise: ns5:Enterprise}), operator: ns5:Organization, referencedDocument: ns6:Document[], notes: ns1:Text, batchID: ns1:Identifier[], expertiseID: ns1:String255, ({indicator: ns5:Indicator} | {disease: ns5:AnimalDisease}), method: ns5:ResearchMethod, result: ns5:ResearchResult, conclusion: ns1:Text)
+     ns6:MergeStockEntriesOperation(type: ns1:RegisterModificationType, sourceStockEntry: ns6:StockEntry[], resultStockEntry: ns6:StockEntry[])
+     ns6:NonFoodProductSourceType
+     ns6:PSLModificationOperation(type: ns1:RegisterModificationType, affectedList: ns5:ProductItemList, resultingList: ns5:ProductItemList)
+     ns6:ProcessingProcedure(type: ns6:ProcessingProcedureType, startDateTime: xsd:dateTime, endDateTime: xsd:dateTime)
+     ns6:ProcessingProcedureType
+     ns6:ProductionOperation(operationId: ns1:Identifier, rawBatch: ns6:RawBatch[], productiveBatch: ns6:ProductiveBatch[], finalizeOperation: xsd:boolean, appliedProcess: ns6:ProcessingProcedure[])
+     ns6:ProductiveBatch(productType: ns5:ProductType, product: ns5:Product, subProduct: ns5:SubProduct, productItem: ns5:ProductItem, volume: ns1:Decimal, unit: ns5:Unit, dateOfProduction: ns6:GoodsDate, expiryDate: ns6:GoodsDate, batchID: ns1:Identifier[], perishable: xsd:boolean, origin: ns6:BatchOrigin, lowGradeCargo: xsd:boolean, packageList: ns5:PackageList, owner: ns5:BusinessEntity, applicableClassifications: ns6:BatchExtraInfo, id: xsd:ID)
+     ns6:QuarantineEvent(ID: ns1:Identifier, name: ns1:String255, type: ns6:VeterinaryEventType, actualDateTime: xsd:dateTime, ({location: ns5:Location} | {enterprise: ns5:Enterprise}), operator: ns5:Organization, referencedDocument: ns6:Document[], notes: ns1:Text, duration: xsd:positiveInteger)
+     ns6:RawBatch(sourceStockEntry: ns6:StockEntry, volume: ns1:Decimal, unit: ns5:Unit, packageList: ns5:PackageList)
+     ns6:ReferencedDocument(uuid: ns1:UUID, name: ns1:String255, form: ns1:String255, issueSeries: ns1:String255, issueNumber: ns1:String255, issueDate: xsd:date, type: ns5:DocumentType, issuer: ns5:Organization, relationshipType: ns5:ReferenceType, for: xsd:IDREF, qualifier: ns1:Identifier)
+     ns6:RegionalizationClause(condition: ns5:RegionalizationCondition, text: ns1:Text)
+     ns6:RouteSectionR13nRules(sqnId: ns1:SequenceNumber, appliedR13nRule: ns5:RegionalizationShippingRule[])
+     ns6:SNILSType
+     ns6:ShipmentRoute(routePoint: ns6:ShipmentRoutePoint[])
+     ns6:ShipmentRoutePoint(uuid: ns1:UUID, sqnId: ns1:SequenceNumber, ({location: ns5:Location} | {enterprise: ns5:Enterprise}), transshipment: xsd:boolean, nextTransport: ns6:TransportInfo)
+     ns6:StockDiscrepancy(affectedList: ns6:StockEntryList, resultingList: ns6:StockEntryList, reason: xsd:string, id: xsd:ID)
+     ns6:StockEntry(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, entryNumber: ns6:StockEntryNumber, batch: ns6:Batch, vetDocument: ns6:VetDocument[], vetEventList: ns6:StockEntryEventList, qualifier: ns1:Identifier)
+     ns6:StockEntryBlankFilter
+     ns6:StockEntryEventList(laboratoryResearch: ns6:LaboratoryResearchEvent[], quarantine: ns6:QuarantineEvent[], immunization: ns6:AnimalMedicationEvent[], veterinaryEvent: ns6:VeterinaryEvent[])
+     ns6:StockEntryList(stockEntry: ns6:StockEntry[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns6:StockEntryNumber
+     ns6:StockEntrySearchPattern(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, entryNumber: ns6:StockEntryNumber, batch: ns6:Batch, vetDocument: ns6:VetDocument[], vetEventList: ns6:StockEntryEventList, blankFilter: ns6:StockEntryBlankFilter, receiptDateInterval: ns1:DateInterval, qualifier: ns1:Identifier)
+     ns6:TransportInfo(transportType: ns5:TransportType, transportNumber: ns6:TransportNumber)
+     ns6:TransportNumber(containerNumber: ns1:String255, wagonNumber: ns1:String255, vehicleNumber: ns1:String255, trailerNumber: ns1:String255, shipName: ns1:String255, flightNumber: ns1:String255)
+     ns6:User(uuid: ns1:UUID, login: xsd:NCName, firstName: ns1:String255, middleName: ns1:String255, lastName: ns1:String255, fio: ns1:String255, birthDate: xsd:date, identity: ns6:Document, citizenship: ns6:Citizenship, snils: ns6:SNILSType, phone: ns1:String255, workPhone: ns1:String255, email: ns1:String255, workEmail: ns1:String255, ({organization: ns5:Organization} | {businessEntity: ns5:BusinessEntity}), post: ns1:String255, enabled: xsd:boolean, nonExpired: xsd:boolean, nonLocked: xsd:boolean, authorityList: ns6:AuthorityList, workingAreaList: ns6:WorkingAreaList)
+     ns6:UserAuthority(ID: xsd:NCName, name: ns1:String255, granted: xsd:boolean)
+     ns6:UserList(user: ns6:User[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns6:VetDocument(uuid: ns1:UUID, name: ns1:String255, form: ns1:String255, issueSeries: ns1:String255, issueNumber: ns1:String255, issueDate: xsd:date, type: ns5:DocumentType, issuer: ns5:Organization, vetDForm: ns6:VetDocumentForm, vetDType: ns6:VetDocumentType, vetDStatus: ns6:VetDocumentStatus, finalized: xsd:boolean, lastUpdateDate: xsd:dateTime, ({certifiedBatch: ns6:CertifiedBatch} | {certifiedConsignment: ns6:CertifiedConsignment}), authentication: ns6:VeterinaryAuthentication, precedingVetDocuments: ns1:String255, referencedDocument: ns6:ReferencedDocument[], statusChange: ns6:VetDocumentStatusChange[], for: xsd:IDREF, qualifier: ns1:Identifier)
+     ns6:VetDocumentForm
+     ns6:VetDocumentList(vetDocument: ns6:VetDocument[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns6:VetDocumentStatus
+     ns6:VetDocumentStatusChange(status: ns6:VetDocumentStatus, specifiedPerson: ns6:User, actualDateTime: xsd:dateTime, reason: ns6:VetDocumentStatusChangeReason)
+     ns6:VetDocumentStatusChangeReason
+     ns6:VetDocumentType
+     ns6:VeterinaryAuthentication(purpose: ns5:Purpose, cargoInspected: xsd:boolean, cargoExpertized: ns5:ResearchResult, locationProsperity: ns1:String255, animalSpentPeriod: ns6:AnimalSpentPeriod, monthsSpent: ns1:String255, laboratoryResearch: ns6:LaboratoryResearchEvent[], quarantine: ns6:QuarantineEvent, immunization: ns6:AnimalMedicationEvent[], veterinaryEvent: ns6:VeterinaryEvent[], r13nClause: ns6:RegionalizationClause[], specialMarks: ns1:Text)
+     ns6:VeterinaryEvent(ID: ns1:Identifier, name: ns1:String255, type: ns6:VeterinaryEventType, actualDateTime: xsd:dateTime, ({location: ns5:Location} | {enterprise: ns5:Enterprise}), operator: ns5:Organization, referencedDocument: ns6:Document[], notes: ns1:Text)
+     ns6:VeterinaryEventType
+     ns6:Waybill(uuid: ns1:UUID, name: ns1:String255, form: ns1:String255, issueSeries: ns1:String255, issueNumber: ns1:String255, issueDate: xsd:date, type: ns5:DocumentType, issuer: ns5:Organization, consignor: ns5:BusinessMember, consignee: ns5:BusinessMember, broker: ns5:BusinessEntity, transportInfo: ns6:TransportInfo, transportStorageType: ns5:TransportationStorageType, shipmentRoute: ns6:ShipmentRoute, for: xsd:IDREF, qualifier: ns1:Identifier)
+     ns6:WorkingArea(({area: ns5:Area} | {enterprise: ns5:Enterprise}))
+     ns6:WorkingAreaList(workingArea: ns6:WorkingArea[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     xsd:ENTITIES
+     xsd:ENTITY
+     xsd:ID
+     xsd:IDREF
+     xsd:IDREFS
+     xsd:NCName
+     xsd:NMTOKEN
+     xsd:NMTOKENS
+     xsd:NOTATION
+     xsd:Name
+     xsd:QName
+     xsd:anySimpleType
+     xsd:anyURI
+     xsd:base64Binary
+     xsd:boolean
+     xsd:byte
+     xsd:date
+     xsd:dateTime
+     xsd:decimal
+     xsd:double
+     xsd:duration
+     xsd:float
+     xsd:gDay
+     xsd:gMonth
+     xsd:gMonthDay
+     xsd:gYear
+     xsd:gYearMonth
+     xsd:hexBinary
+     xsd:int
+     xsd:integer
+     xsd:language
+     xsd:long
+     xsd:negativeInteger
+     xsd:nonNegativeInteger
+     xsd:nonPositiveInteger
+     xsd:normalizedString
+     xsd:positiveInteger
+     xsd:short
+     xsd:string
+     xsd:time
+     xsd:token
+     xsd:unsignedByte
+     xsd:unsignedInt
+     xsd:unsignedLong
+     xsd:unsignedShort
+
+Bindings:
+
+Service: ApplicationManagementServiceBindingQSService
+     Port: ApplicationManagementServiceBindingQSPort (Soap11Binding: {http://api.vetrf.ru/schema/cdm/application/service}ApplicationManagementServiceBinding)
+         Operations:
+            receiveApplicationResult(apiKey: ns2:APIKey, issuerId: ns1:UUID, applicationId: ns1:UUID) -> application: ns2:Application
+            submitApplicationRequest(apiKey: ns2:APIKey, application: ns2:Application) -> application: ns2:Application
+

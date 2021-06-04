@@ -1,0 +1,375 @@
+
+Prefixes:
+     xsd: http://www.w3.org/2001/XMLSchema
+     ns0: http://api.vetrf.ru/schema/cdm/base/ws-definitions
+     ns1: http://api.vetrf.ru/schema/cdm/base
+     ns2: http://api.vetrf.ru/schema/cdm/registry/ws-definitions/v2
+     ns3: http://api.vetrf.ru/schema/cdm/dictionary/v2
+
+Global elements:
+     ns0:accessDeniedFault(ns1:FaultInfo)
+     ns0:entityNotFoundFault(ns1:FaultInfo)
+     ns0:incorrectRequestFault(ns1:FaultInfo)
+     ns0:internalServiceFault(ns1:FaultInfo)
+     ns0:offsetOutOfRangeFault(ns1:FaultInfo)
+     ns0:requestRejectedFault(ns1:FaultInfo)
+     ns1:guid(ns1:UUID)
+     ns1:listOptions(ns1:ListOptions)
+     ns1:updateDateInterval(ns1:DateInterval)
+     ns1:uuid(ns1:UUID)
+     ns3:activityLocationList(ns3:ActivityLocationList)
+     ns3:businessEntity(ns3:BusinessEntity)
+     ns3:businessEntityList(ns3:BusinessEntityList)
+     ns3:businessMember(ns3:BusinessMember)
+     ns3:cargoType(ns3:SubProduct)
+     ns3:country(ns3:Country)
+     ns3:countryGuid(ns1:UUID)
+     ns3:countryList(ns3:CountryList)
+     ns3:disease(ns3:AnimalDisease)
+     ns3:diseaseList(ns3:AnimalDiseaseList)
+     ns3:district(ns3:District)
+     ns3:districtGuid(ns1:UUID)
+     ns3:districtList(ns3:DistrictList)
+     ns3:enterprise(ns3:Enterprise)
+     ns3:enterpriseGroup(ns3:EnterpriseGroup)
+     ns3:enterpriseGuid(ns1:UUID)
+     ns3:enterpriseList(ns3:EnterpriseList)
+     ns3:globalID(ns3:GLNType)
+     ns3:localityGuid(ns1:UUID)
+     ns3:localityList(ns3:LocalityList)
+     ns3:producer(ns3:BusinessMember)
+     ns3:product(ns3:Product)
+     ns3:productGuid(ns1:UUID)
+     ns3:productItem(ns3:ProductItem)
+     ns3:productItemList(ns3:ProductItemList)
+     ns3:productList(ns3:ProductList)
+     ns3:productType(ns3:ProductType)
+     ns3:purpose(ns3:Purpose)
+     ns3:purposeList(ns3:PurposeList)
+     ns3:r13nConditionList(ns3:RegionalizationConditionList)
+     ns3:r13nRegionStatusList(ns3:RegionalizationRegionStatusList)
+     ns3:r13nShippingRuleList(ns3:RegionalizationShippingRuleList)
+     ns3:r13nZone(ns3:Area)
+     ns3:region(ns3:Region)
+     ns3:regionGuid(ns1:UUID)
+     ns3:regionList(ns3:RegionList)
+     ns3:researchMethod(ns3:ResearchMethod)
+     ns3:researchMethodList(ns3:ResearchMethodList)
+     ns3:streetList(ns3:StreetList)
+     ns3:subProduct(ns3:SubProduct)
+     ns3:subProductGuid(ns1:UUID)
+     ns3:subProductList(ns3:SubProductList)
+     ns3:unit(ns3:Unit)
+     ns3:unitList(ns3:UnitList)
+     ns2:findLocalityListByNameRequest(listOptions: ns1:ListOptions, regionGuid: ns1:UUID, pattern: xsd:string)
+     ns2:findLocalityListByNameResponse(localityList: ns3:LocalityList)
+     ns2:findStreetListByNameRequest(listOptions: ns1:ListOptions, localityGuid: ns1:UUID, pattern: xsd:string)
+     ns2:findStreetListByNameResponse(streetList: ns3:StreetList)
+     ns2:getActivityLocationListRequest(listOptions: ns1:ListOptions, businessEntity: ns3:BusinessEntity)
+     ns2:getActivityLocationListResponse(activityLocationList: ns3:ActivityLocationList)
+     ns2:getActualR13nRegionStatusListRequest(listOptions: ns1:ListOptions, disease: ns3:AnimalDisease, r13nZone: ns3:Area)
+     ns2:getActualR13nRegionStatusListResponse(r13nRegionStatusList: ns3:RegionalizationRegionStatusList)
+     ns2:getActualR13nShippingRuleListRequest(listOptions: ns1:ListOptions, disease: ns3:AnimalDisease, productType: ns3:ProductType, product: ns3:Product, subProduct: ns3:SubProduct)
+     ns2:getActualR13nShippingRuleListResponse(r13nShippingRuleList: ns3:RegionalizationShippingRuleList)
+     ns2:getAllCountryListRequest(listOptions: ns1:ListOptions)
+     ns2:getAllCountryListResponse(countryList: ns3:CountryList)
+     ns2:getBusinessEntityByGuidRequest(guid: ns1:UUID)
+     ns2:getBusinessEntityByGuidResponse(businessEntity: ns3:BusinessEntity)
+     ns2:getBusinessEntityByUuidRequest(uuid: ns1:UUID)
+     ns2:getBusinessEntityByUuidResponse(businessEntity: ns3:BusinessEntity)
+     ns2:getBusinessEntityChangesListRequest(listOptions: ns1:ListOptions, updateDateInterval: ns1:DateInterval)
+     ns2:getBusinessEntityChangesListResponse(businessEntityList: ns3:BusinessEntityList)
+     ns2:getBusinessEntityListRequest(listOptions: ns1:ListOptions, businessEntity: ns3:BusinessEntity)
+     ns2:getBusinessEntityListResponse(businessEntityList: ns3:BusinessEntityList)
+     ns2:getBusinessMemberByGLNRequest(globalID: ns3:GLNType)
+     ns2:getBusinessMemberByGLNResponse(businessMember: ns3:BusinessMember)
+     ns2:getCountryByGuidRequest(guid: ns1:UUID)
+     ns2:getCountryByGuidResponse(country: ns3:Country)
+     ns2:getCountryByUuidRequest(uuid: ns1:UUID)
+     ns2:getCountryByUuidResponse(country: ns3:Country)
+     ns2:getCountryChangesListRequest(listOptions: ns1:ListOptions, updateDateInterval: ns1:DateInterval)
+     ns2:getCountryChangesListResponse(countryList: ns3:CountryList)
+     ns2:getDiseaseByGuidRequest(guid: ns1:UUID)
+     ns2:getDiseaseByGuidResponse(disease: ns3:AnimalDisease)
+     ns2:getDiseaseByUuidRequest(uuid: ns1:UUID)
+     ns2:getDiseaseByUuidResponse(disease: ns3:AnimalDisease)
+     ns2:getDiseaseChangesListRequest(listOptions: ns1:ListOptions, updateDateInterval: ns1:DateInterval)
+     ns2:getDiseaseChangesListResponse(diseaseList: ns3:AnimalDiseaseList)
+     ns2:getDiseaseListRequest(listOptions: ns1:ListOptions)
+     ns2:getDiseaseListResponse(diseaseList: ns3:AnimalDiseaseList)
+     ns2:getDistrictByGuidRequest(guid: ns1:UUID)
+     ns2:getDistrictByGuidResponse(district: ns3:District)
+     ns2:getDistrictByUuidRequest(uuid: ns1:UUID)
+     ns2:getDistrictByUuidResponse(district: ns3:District)
+     ns2:getDistrictChangesListRequest(listOptions: ns1:ListOptions, updateDateInterval: ns1:DateInterval)
+     ns2:getDistrictChangesListResponse(districtList: ns3:DistrictList)
+     ns2:getDistrictListByRegionRequest(listOptions: ns1:ListOptions, regionGuid: ns1:UUID)
+     ns2:getDistrictListByRegionResponse(districtList: ns3:DistrictList)
+     ns2:getEnterpriseByGuidRequest(guid: ns1:UUID)
+     ns2:getEnterpriseByGuidResponse(enterprise: ns3:Enterprise)
+     ns2:getEnterpriseByUuidRequest(uuid: ns1:UUID)
+     ns2:getEnterpriseByUuidResponse(enterprise: ns3:Enterprise)
+     ns2:getForeignEnterpriseChangesListRequest(listOptions: ns1:ListOptions, updateDateInterval: ns1:DateInterval)
+     ns2:getForeignEnterpriseChangesListResponse(enterpriseList: ns3:EnterpriseList)
+     ns2:getForeignEnterpriseListRequest(listOptions: ns1:ListOptions, enterpriseGroup: ns3:EnterpriseGroup, enterprise: ns3:Enterprise)
+     ns2:getForeignEnterpriseListResponse(enterpriseList: ns3:EnterpriseList)
+     ns2:getLocalityChangesListRequest(listOptions: ns1:ListOptions, updateDateInterval: ns1:DateInterval)
+     ns2:getLocalityChangesListResponse(localityList: ns3:LocalityList)
+     ns2:getLocalityListByDistrictRequest(listOptions: ns1:ListOptions, districtGuid: ns1:UUID)
+     ns2:getLocalityListByDistrictResponse(localityList: ns3:LocalityList)
+     ns2:getLocalityListByLocalityRequest(listOptions: ns1:ListOptions, localityGuid: ns1:UUID)
+     ns2:getLocalityListByLocalityResponse(localityList: ns3:LocalityList)
+     ns2:getLocalityListByRegionRequest(listOptions: ns1:ListOptions, regionGuid: ns1:UUID)
+     ns2:getLocalityListByRegionResponse(localityList: ns3:LocalityList)
+     ns2:getProductByGuidRequest(guid: ns1:UUID)
+     ns2:getProductByGuidResponse(product: ns3:Product)
+     ns2:getProductByTypeListRequest(listOptions: ns1:ListOptions, productType: ns3:ProductType)
+     ns2:getProductByTypeListResponse(productList: ns3:ProductList)
+     ns2:getProductByUuidRequest(uuid: ns1:UUID)
+     ns2:getProductByUuidResponse(product: ns3:Product)
+     ns2:getProductChangesListRequest(listOptions: ns1:ListOptions, updateDateInterval: ns1:DateInterval)
+     ns2:getProductChangesListResponse(productList: ns3:ProductList)
+     ns2:getProductItemByGuidRequest(guid: ns1:UUID)
+     ns2:getProductItemByGuidResponse(productItem: ns3:ProductItem)
+     ns2:getProductItemByUuidRequest(uuid: ns1:UUID)
+     ns2:getProductItemByUuidResponse(productItem: ns3:ProductItem)
+     ns2:getProductItemChangesListRequest(listOptions: ns1:ListOptions, updateDateInterval: ns1:DateInterval, businessEntity: ns3:BusinessEntity, enterprise: ns3:Enterprise, producer: ns3:BusinessMember)
+     ns2:getProductItemChangesListResponse(productItemList: ns3:ProductItemList)
+     ns2:getProductItemListRequest(listOptions: ns1:ListOptions, productType: ns3:ProductType, product: ns3:Product, subProduct: ns3:SubProduct, businessEntity: ns3:BusinessEntity, enterprise: ns3:Enterprise, producer: ns3:BusinessMember, globalID: ns3:GLNType)
+     ns2:getProductItemListResponse(productItemList: ns3:ProductItemList)
+     ns2:getPurposeByGuidRequest(guid: ns1:UUID)
+     ns2:getPurposeByGuidResponse(purpose: ns3:Purpose)
+     ns2:getPurposeByUuidRequest(uuid: ns1:UUID)
+     ns2:getPurposeByUuidResponse(purpose: ns3:Purpose)
+     ns2:getPurposeChangesListRequest(listOptions: ns1:ListOptions, updateDateInterval: ns1:DateInterval)
+     ns2:getPurposeChangesListResponse(purposeList: ns3:PurposeList)
+     ns2:getPurposeListRequest(listOptions: ns1:ListOptions)
+     ns2:getPurposeListResponse(purposeList: ns3:PurposeList)
+     ns2:getR13nConditionListRequest(listOptions: ns1:ListOptions, disease: ns3:AnimalDisease)
+     ns2:getR13nConditionListResponse(r13nConditionList: ns3:RegionalizationConditionList)
+     ns2:getRegionByGuidRequest(guid: ns1:UUID)
+     ns2:getRegionByGuidResponse(region: ns3:Region)
+     ns2:getRegionByUuidRequest(uuid: ns1:UUID)
+     ns2:getRegionByUuidResponse(region: ns3:Region)
+     ns2:getRegionChangesListRequest(listOptions: ns1:ListOptions, updateDateInterval: ns1:DateInterval)
+     ns2:getRegionChangesListResponse(regionList: ns3:RegionList)
+     ns2:getRegionListByCountryRequest(listOptions: ns1:ListOptions, countryGuid: ns1:UUID)
+     ns2:getRegionListByCountryResponse(regionList: ns3:RegionList)
+     ns2:getResearchMethodByGuidRequest(guid: ns1:UUID)
+     ns2:getResearchMethodByGuidResponse(researchMethod: ns3:ResearchMethod)
+     ns2:getResearchMethodByUuidRequest(uuid: ns1:UUID)
+     ns2:getResearchMethodByUuidResponse(researchMethod: ns3:ResearchMethod)
+     ns2:getResearchMethodChangesListRequest(listOptions: ns1:ListOptions, updateDateInterval: ns1:DateInterval)
+     ns2:getResearchMethodChangesListResponse(researchMethodList: ns3:ResearchMethodList)
+     ns2:getResearchMethodListRequest(listOptions: ns1:ListOptions)
+     ns2:getResearchMethodListResponse(researchMethodList: ns3:ResearchMethodList)
+     ns2:getRussianEnterpriseChangesListRequest(listOptions: ns1:ListOptions, updateDateInterval: ns1:DateInterval)
+     ns2:getRussianEnterpriseChangesListResponse(enterpriseList: ns3:EnterpriseList)
+     ns2:getRussianEnterpriseListRequest(listOptions: ns1:ListOptions, enterprise: ns3:Enterprise)
+     ns2:getRussianEnterpriseListResponse(enterpriseList: ns3:EnterpriseList)
+     ns2:getStreetChangesListRequest(listOptions: ns1:ListOptions, updateDateInterval: ns1:DateInterval)
+     ns2:getStreetChangesListResponse(streetList: ns3:StreetList)
+     ns2:getStreetListByLocalityRequest(listOptions: ns1:ListOptions, localityGuid: ns1:UUID)
+     ns2:getStreetListByLocalityResponse(streetList: ns3:StreetList)
+     ns2:getSubProductByGuidRequest(guid: ns1:UUID)
+     ns2:getSubProductByGuidResponse(subProduct: ns3:SubProduct)
+     ns2:getSubProductByProductListRequest(listOptions: ns1:ListOptions, productGuid: ns1:UUID)
+     ns2:getSubProductByProductListResponse(subProductList: ns3:SubProductList)
+     ns2:getSubProductByUuidRequest(uuid: ns1:UUID)
+     ns2:getSubProductByUuidResponse(subProduct: ns3:SubProduct)
+     ns2:getSubProductChangesListRequest(listOptions: ns1:ListOptions, updateDateInterval: ns1:DateInterval)
+     ns2:getSubProductChangesListResponse(subProductList: ns3:SubProductList)
+     ns2:getUnitByGuidRequest(guid: ns1:UUID)
+     ns2:getUnitByGuidResponse(unit: ns3:Unit)
+     ns2:getUnitByUuidRequest(uuid: ns1:UUID)
+     ns2:getUnitByUuidResponse(unit: ns3:Unit)
+     ns2:getUnitChangesListRequest(listOptions: ns1:ListOptions, updateDateInterval: ns1:DateInterval)
+     ns2:getUnitChangesListResponse(unitList: ns3:UnitList)
+     ns2:getUnitListRequest(listOptions: ns1:ListOptions)
+     ns2:getUnitListResponse(unitList: ns3:UnitList)
+     
+
+Global types:
+     xsd:anyType
+     ns1:DateInterval(beginDate: xsd:dateTime, endDate: xsd:dateTime)
+     ns1:Decimal
+     ns1:EntityList(count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns1:Error(xsd:string, code: xsd:NCName, qualifier: ns1:Identifier)
+     ns1:FaultInfo(message: xsd:string, error: ns1:Error[])
+     ns1:GenericEntity(uuid: ns1:UUID)
+     ns1:GenericVersioningEntity(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID)
+     ns1:Identifier
+     ns1:ListOptions(count: xsd:nonNegativeInteger, offset: xsd:nonNegativeInteger)
+     ns1:NText
+     ns1:RegisterModificationType
+     ns1:SequenceNumber
+     ns1:String255
+     ns1:String32
+     ns1:Text
+     ns1:UUID
+     ns1:VersionStatus
+     ns3:ActivityLocationList(location: ns3:BusinessMember[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns3:Address(country: ns3:Country, federalDistrict: ns3:FederalDistrict, region: ns3:Region, district: ns3:District, locality: ns3:Locality, subLocality: ns3:Locality, street: ns3:Street, house: ns1:String255, building: ns1:String255, room: ns1:String255, postIndex: ns1:String255, postBox: ns1:String255, additionalInfo: ns1:NText, addressView: ns1:NText, enAddressView: ns1:NText)
+     ns3:AddressObjectView(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, name: ns1:String255, englishName: ns1:String255, view: ns1:String255, regionCode: xsd:string, type: ns1:String255, countryGuid: ns1:UUID, hasStreets: xsd:boolean)
+     ns3:AnimalDisease(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, name: ns1:String255)
+     ns3:AnimalDiseaseList(disease: ns3:AnimalDisease[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns3:Area(country: ns3:Country, federalDistrict: ns3:FederalDistrict, region: ns3:Region, district: ns3:District, locality: ns3:Locality, subLocality: ns3:Locality, street: ns3:Street, house: ns1:String255, building: ns1:String255, room: ns1:String255, postIndex: ns1:String255, postBox: ns1:String255, additionalInfo: ns1:NText, addressView: ns1:NText, enAddressView: ns1:NText)
+     ns3:BEModificationReason
+     ns3:BusinessEntity(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, type: ns3:BusinessEntityType, name: ns1:String255, incorporationForm: ns3:IncorporationForm, fullName: ns1:String255, fio: ns1:String255, passport: ns1:String255, inn: ns1:String255, kpp: ns1:String255, ogrn: ns1:String255, juridicalAddress: ns3:Address, activityLocation: {globalID: ns3:GLNType[], enterprise: ns3:Enterprise}[])
+     ns3:BusinessEntityList(businessEntity: ns3:BusinessEntity[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns3:BusinessEntityType
+     ns3:BusinessMember(businessEntity: ns3:BusinessEntity, enterprise: ns3:Enterprise, globalID: ns3:GLNType[])
+     ns3:Code
+     ns3:Code3
+     ns3:ComplexDate(year: ns3:Year, month: ns3:Month, day: ns3:Day, hour: ns3:Hour, minute: ns3:Minute)
+     ns3:Country(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, name: ns1:String255, fullName: ns1:String255, englishName: ns1:String255, code: ns3:Code, code3: ns3:Code3)
+     ns3:CountryList(country: ns3:Country[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns3:Day
+     ns3:District(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, name: ns1:String255, englishName: ns1:String255, view: ns1:String255, regionCode: xsd:string, type: ns1:String255, countryGuid: ns1:UUID, hasStreets: xsd:boolean, regionGuid: ns1:UUID)
+     ns3:DistrictList(district: ns3:District[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns3:DocumentNature
+     ns3:DocumentType
+     ns3:ENTModificationReason
+     ns3:Enterprise(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, name: ns1:String255, englishName: ns1:String255, type: ns3:EnterpriseType, numberList: ns3:EnterpriseNumberList, address: ns3:Address, activityList: ns3:EnterpriseActivityList, owner: ns3:BusinessEntity, officialRegistration: ns3:EnterpriseOfficialRegistration[], registryStatus: ns3:EnterpriseStatus)
+     ns3:EnterpriseActivity(uuid: ns1:UUID, name: ns1:NText)
+     ns3:EnterpriseActivityList(activity: ns3:EnterpriseActivity[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns3:EnterpriseGroup
+     ns3:EnterpriseList(enterprise: ns3:Enterprise[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns3:EnterpriseNumberList(enterpriseNumber: ns1:String255[])
+     ns3:EnterpriseOfficialRegistration(ID: ns3:GRNType, businessEntity: ns3:BusinessEntity, kpp: ns1:String255)
+     ns3:EnterpriseRole
+     ns3:EnterpriseStatus
+     ns3:EnterpriseType
+     ns3:FederalDistrict(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, fullName: ns1:String255, shortName: ns1:String255, abbreviation: ns1:String255)
+     ns3:GLNType
+     ns3:GRNType
+     ns3:GTINType
+     ns3:Hour
+     ns3:IncorporationForm(uuid: ns1:UUID, name: ns1:String255, code: ns1:String255, shortName: ns1:String255)
+     ns3:Indicator(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, name: ns1:String255)
+     ns3:Locality(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, name: ns1:String255, englishName: ns1:String255, view: ns1:String255, regionCode: xsd:string, type: ns1:String255, countryGuid: ns1:UUID, hasStreets: xsd:boolean, regionGuid: ns1:UUID, districtGuid: ns1:UUID, cityGuid: ns1:UUID)
+     ns3:LocalityList(locality: ns3:Locality[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns3:Location(name: ns1:String255, address: ns3:Address)
+     ns3:MedicinalDrug(ID: ns1:Identifier, name: ns1:String255, series: ns1:String255, producer: ns3:BusinessMember)
+     ns3:Minute
+     ns3:Month
+     ns3:OTPToken
+     ns3:Organization(ID: ns1:Identifier, name: ns1:String255, address: ns3:Address)
+     ns3:Package(level: ns3:PackageLevelType, packingType: ns3:PackingType, quantity: xsd:integer, productMarks: ns3:ProductMarks[])
+     ns3:PackageLevelType
+     ns3:PackageList(package: ns3:Package[])
+     ns3:Packaging(packagingType: ns3:PackingType, quantity: xsd:integer, volume: ns1:Decimal, unit: ns3:Unit)
+     ns3:PackingCodeType
+     ns3:PackingType(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, globalID: ns3:PackingCodeType, name: ns1:String255)
+     ns3:Producer(enterprise: ns3:Enterprise, role: ns3:EnterpriseRole)
+     ns3:ProducerList(producer: ns3:Producer[])
+     ns3:Product(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, name: ns1:String255, code: ns1:String255, englishName: ns1:String255, productType: ns3:ProductType)
+     ns3:ProductItem(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, globalID: ns3:GTINType, name: ns1:String255, code: ns1:String255, productType: ns3:ProductType, product: ns3:Product, subProduct: ns3:SubProduct, correspondsToGost: xsd:boolean, gost: ns1:String255, producer: ns3:BusinessEntity, tmOwner: ns3:BusinessEntity, producing: ns3:ProductItemProducing[], packaging: ns3:Packaging, isPublic: xsd:boolean)
+     ns3:ProductItemList(productItem: ns3:ProductItem[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns3:ProductItemProducing(location: ns3:Enterprise)
+     ns3:ProductList(product: ns3:Product[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns3:ProductMarkingClass
+     ns3:ProductMarks(ns1:String255, class: ns3:ProductMarkingClass)
+     ns3:ProductType
+     ns3:ProsperityType
+     ns3:Purpose(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, name: ns1:String255, forSubstandard: xsd:boolean)
+     ns3:PurposeList(purpose: ns3:Purpose[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns3:ReferenceType
+     ns3:Region(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, name: ns1:String255, englishName: ns1:String255, view: ns1:String255, regionCode: xsd:string, type: ns1:String255, countryGuid: ns1:UUID, hasStreets: xsd:boolean)
+     ns3:RegionList(region: ns3:Region[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns3:RegionalizationCondition(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, referenceNumber: ns1:Identifier, text: ns1:Text, strict: xsd:boolean, relatedDisease: ns3:AnimalDisease[])
+     ns3:RegionalizationConditionGroup(condition: ns3:RegionalizationCondition[])
+     ns3:RegionalizationConditionList(condition: ns3:RegionalizationCondition[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns3:RegionalizationDecision
+     ns3:RegionalizationRegionStatus(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, referenceNumber: ns1:Identifier, r13nZone: ns3:Area, excludedR13nZone: ns3:Area[], r13nStatus: ns3:RegionalizationStatus[])
+     ns3:RegionalizationRegionStatusList(status: ns3:RegionalizationRegionStatus[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns3:RegionalizationRequirement(relatedDisease: ns3:AnimalDisease, type: ns3:RegionalizationDecision, conditionGroup: ns3:RegionalizationConditionGroup[])
+     ns3:RegionalizationShippingRule(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, referenceNumber: ns1:Identifier, fromR13nStatus: ns3:RegionalizationStatus, toR13nStatus: ns3:RegionalizationStatus, cargoType: ns3:SubProduct[], decision: ns3:RegionalizationDecision, requirement: ns3:RegionalizationRequirement[])
+     ns3:RegionalizationShippingRuleList(rule: ns3:RegionalizationShippingRule[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns3:RegionalizationStatus(relatedDisease: ns3:AnimalDisease, prosperity: ns3:ProsperityType, vaccination: ns3:VaccinationType)
+     ns3:ResearchMethod(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, name: ns1:String255)
+     ns3:ResearchMethodList(method: ns3:ResearchMethod[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns3:ResearchResult
+     ns3:Street(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, name: ns1:String255, englishName: ns1:String255, view: ns1:String255, regionCode: xsd:string, type: ns1:String255, countryGuid: ns1:UUID, hasStreets: xsd:boolean, localityGuid: ns1:UUID)
+     ns3:StreetList(street: ns3:Street[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns3:SubProduct(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, name: ns1:String255, code: ns1:String255, englishName: ns1:String255, productGuid: ns1:UUID)
+     ns3:SubProductList(subProduct: ns3:SubProduct[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns3:TransportType
+     ns3:TransportationStorageType
+     ns3:Unit(uuid: ns1:UUID, guid: ns1:UUID, active: xsd:boolean, last: xsd:boolean, status: ns1:VersionStatus, createDate: xsd:dateTime, updateDate: xsd:dateTime, previous: ns1:UUID, next: ns1:UUID, name: ns1:String255, fullName: ns1:String255, commonUnitGuid: ns1:UUID, factor: xsd:integer)
+     ns3:UnitList(unit: ns3:Unit[], count: xsd:int, total: xsd:long, offset: xsd:int, hasMore: xsd:boolean)
+     ns3:VaccinationType
+     ns3:Year
+     xsd:ENTITIES
+     xsd:ENTITY
+     xsd:ID
+     xsd:IDREF
+     xsd:IDREFS
+     xsd:NCName
+     xsd:NMTOKEN
+     xsd:NMTOKENS
+     xsd:NOTATION
+     xsd:Name
+     xsd:QName
+     xsd:anySimpleType
+     xsd:anyURI
+     xsd:base64Binary
+     xsd:boolean
+     xsd:byte
+     xsd:date
+     xsd:dateTime
+     xsd:decimal
+     xsd:double
+     xsd:duration
+     xsd:float
+     xsd:gDay
+     xsd:gMonth
+     xsd:gMonthDay
+     xsd:gYear
+     xsd:gYearMonth
+     xsd:hexBinary
+     xsd:int
+     xsd:integer
+     xsd:language
+     xsd:long
+     xsd:negativeInteger
+     xsd:nonNegativeInteger
+     xsd:nonPositiveInteger
+     xsd:normalizedString
+     xsd:positiveInteger
+     xsd:short
+     xsd:string
+     xsd:time
+     xsd:token
+     xsd:unsignedByte
+     xsd:unsignedInt
+     xsd:unsignedLong
+     xsd:unsignedShort
+
+Bindings:
+     Soap11Binding: {http://api.vetrf.ru/schema/cdm/registry/ikar/service/v2}IkarServiceBinding
+
+Service: IkarServiceBindingQSService
+     Port: IkarServiceBindingQSPort (Soap11Binding: {http://api.vetrf.ru/schema/cdm/registry/ikar/service/v2}IkarServiceBinding)
+         Operations:
+            FindLocalityListByName(listOptions: ns1:ListOptions, regionGuid: ns1:UUID, pattern: xsd:string) -> localityList: ns3:LocalityList
+            FindStreetListByName(listOptions: ns1:ListOptions, localityGuid: ns1:UUID, pattern: xsd:string) -> streetList: ns3:StreetList
+            GetAllCountryList(listOptions: ns1:ListOptions) -> countryList: ns3:CountryList
+            GetCountryByGuid(guid: ns1:UUID) -> country: ns3:Country
+            GetCountryByUuid(uuid: ns1:UUID) -> country: ns3:Country
+            GetCountryChangesList(listOptions: ns1:ListOptions, updateDateInterval: ns1:DateInterval) -> countryList: ns3:CountryList
+            GetDistrictByGuid(guid: ns1:UUID) -> district: ns3:District
+            GetDistrictByUuid(uuid: ns1:UUID) -> district: ns3:District
+            GetDistrictChangesList(listOptions: ns1:ListOptions, updateDateInterval: ns1:DateInterval) -> districtList: ns3:DistrictList
+            GetDistrictListByRegion(listOptions: ns1:ListOptions, regionGuid: ns1:UUID) -> districtList: ns3:DistrictList
+            GetLocalityChangesList(listOptions: ns1:ListOptions, updateDateInterval: ns1:DateInterval) -> localityList: ns3:LocalityList
+            GetLocalityListByDistrict(listOptions: ns1:ListOptions, districtGuid: ns1:UUID) -> localityList: ns3:LocalityList
+            GetLocalityListByLocality(listOptions: ns1:ListOptions, localityGuid: ns1:UUID) -> localityList: ns3:LocalityList
+            GetLocalityListByRegion(listOptions: ns1:ListOptions, regionGuid: ns1:UUID) -> localityList: ns3:LocalityList
+            GetRegionByGuid(guid: ns1:UUID) -> region: ns3:Region
+            GetRegionByUuid(uuid: ns1:UUID) -> region: ns3:Region
+            GetRegionChangesList(listOptions: ns1:ListOptions, updateDateInterval: ns1:DateInterval) -> regionList: ns3:RegionList
+            GetRegionListByCountry(listOptions: ns1:ListOptions, countryGuid: ns1:UUID) -> regionList: ns3:RegionList
+            GetStreetChangesList(listOptions: ns1:ListOptions, updateDateInterval: ns1:DateInterval) -> streetList: ns3:StreetList
+            GetStreetListByLocality(listOptions: ns1:ListOptions, localityGuid: ns1:UUID) -> streetList: ns3:StreetList
+
