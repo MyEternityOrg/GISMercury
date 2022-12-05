@@ -1,0 +1,7 @@
+{
+	"auth": "login",
+	"pass": "pass",
+	"api_key": "api_key",
+	"initiator": "issuer",
+	"issuer_id": "issuer_id"
+}

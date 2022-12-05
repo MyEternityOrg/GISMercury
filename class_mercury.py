@@ -895,16 +895,24 @@ class MercuryProductionService(MercuryConnection):
         self.combine_args(args, 'initiator', {'login': self.initiator})
         return xsd.AnyObject(request, request(**args))
 
+
 s = JS('settings.json')
 mc2 = MercuryProductionService(s.param('auth'), s.param('pass'), use_plugin=False)
 mc2.api_key = s.param('api_key')
 mc2.initiator = s.param('initiator')
 mc2.issuer_id = s.param('issuer_id')
-request = mc2.get_stock_entry_list_request('fd3f39fd-01c0-4d02-9f0e-8f9937db12c2', count=50000, offset=0)
-req2 = mc2.get_vet_document_by_uuid_request('e32c7818-7877-4d8b-afec-58af217c2a4a','fd3f39fd-01c0-4d02-9f0e-8f9937db12c2')
+request = mc2.get_stock_entry_list_request('fd3f39fd-01c0-4d02-9f0e-8f9937db12c2', count=100, offset=0)
+reply = mc2.submit_application_request(request)
+print(reply)
+
+
+'''
+request = mc2.get_stock_entry_list_request('fd3f39fd-01c0-4d02-9f0e-8f9937db12c2', count=100, offset=0)
+req2 = mc2.get_vet_document_by_uuid_request('e32c7818-7877-4d8b-afec-58af217c2a4a', 'fd3f39fd-01c0-4d02-9f0e-8f9937db12c2')
 reply = mc2.submit_application_request(request)
 print(type(reply))
-#print(reply)
+print(reply)
 with open('reply.json', 'w', encoding='UTF8') as f:
-    f.write(str(mc2.receive_application_result('2fcd8c20-e318-41f4-956e-e7bed5663c35')))
+    f.write(str(mc2.receive_application_result('433b25ab-bbff-4df8-91b0-0b39f0126b20')))
 
+'''
